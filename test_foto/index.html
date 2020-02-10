@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UFT-8">
+    <title>Test technique Stage</title>
+    <link rel="stylesheet" href="index.css"> 
+</head>
+
+<body>
+    <h1>Bienvenue</h1>
+    <p>
+        Voici mon test technique 
+    </p>
+    <div id="container">
+        <h1>
+            Camera 
+        </h1>
+        <div>
+            <video autoplay="true" id="videoElement"></video> 
+        </div>
+    </br>
+        <div id="capture">
+            <button id="capture" ><img src="https://download.seaicons.com/icons/osullivanluke/orb-os-x/512/Image-Capture-icon.png" width="20px" /></button>
+        </div>
+        <div id="turn">
+            <button id="turn" ><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQsxkGUs9Ngd5NrH7boQDC4SBJvJcXFW59-6wOnyp1q4chOSYoy" width="20px" /></button>
+        </div>
+
+    </br> </br>
+<!-- Nous allons récuperer la photo prise dans ce div -->
+        <div>
+                    <canvas id="canvas" width=" 200" height="150"></canvas>
+        </div>
+    </div>
+
+   
+<script>
+var video=document.querySelector("#videoElement");
+var canvas = document.getElementById('canvas');
+var context= canvas.getContext('2d');
+// Methode demandant l'autorisation de  l'utilisation pour une entrée multimédia dans notre cas une vidéo 
+navigator.getUserMedia({video:true},handleVideo,videoError);
+//Fonction permettant de récuperer la vue de la caméra
+
+function handleVideo(stream){
+    video.srcObject = stream;
+}
+
+//En cas d'erreur on affiche un message dans la console
+function videoError(e){ 
+    console.log("Error")
+}
+
+// On affecte une action au bouton capture  permettant d'afficher la photo prise dans le div "capture"
+document.getElementById('capture').addEventListener('click',function(){
+    context.drawImage(video, 0 , 0, 200 , 150)
+})
+</script>
+</body>
+</html>
