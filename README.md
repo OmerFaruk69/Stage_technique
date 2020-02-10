@@ -12,7 +12,7 @@
 git clone https://github.com/OmerFaruk69/Stage_technique.git
 cd Stage_technique\test_foto
 python .\https_local.py
-open in your navigator localhost:82
+open your navigator with localhost:82
 ```
 
 ## Difficulty
