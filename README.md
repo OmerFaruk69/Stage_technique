@@ -9,7 +9,7 @@
 ## Installing
 
 ```bash
-git clone https://github.com/OmerFaruk69/Test_Stage.git
+git clone https://github.com/OmerFaruk69/Stage_technique.git
 cd Test_Stage\test_foto
 python .\https_local.py
 open in your navigator localhost:82
